@@ -1,0 +1,39 @@
+<h1 id="exploring-deep-learning-and-satellite-data-with-the-fastai-library">Exploring deep learning and satellite data with the fastai library</h1>
+
+<p><strong>Background</strong></p>
+
+<p>Due to government changes and cost reductions, the number of satellite launched into orbit has drastically increased in recent years. <br />
+<img src="attachment:b76a5499-e3ee-4bab-99d6-01b35a5dc2cf.png" width="600" height="600" /><br />
+image from https://www.researchgate.net/figure/The-cumulative-number-of-near-polar-orbiting-high-resolution-Earth-observing-civilian_fig2_340004098)</p>
+
+<p>Many of these satellites capture images of the earth’s surface through various ranges of the electromagnetic spectrum. This combined with the recent advancement in deep learning technology such as the <a href="https://arxiv.org/abs/1505.04597">U-Net</a> has lead to rapid growth in the field of geospatial machine learning. Although this is a relatively new field, there are already several large companies such as <a href="https://spaceknow.com/">spaceknow</a> with several established solutions when it comes to extracting insight from data gathered by these satellites 
+<img src="attachment:433743f7-8bbd-4df3-881b-7acd70e7f36c.png" width="600" height="600" /><br />
+ (image from https://courses.lumenlearning.com/astronomy/chapter/the-electromagnetic-spectrum/)</p>
+
+<p><strong>Project</strong></p>
+
+<p>The goal of this project is to explore the possibilities of applying deep learning to satellite data using the fastai library. In the early phases I spent some time looking at the most common use cases. As it turns out those were image classifiers and segmentation models. Equipped with close to zero knowledge, a ton of motivation and a healthy amount of naivety I started to explore SpaceNet’s <a href="https://spacenet.ai/sn7-challenge/">Multi-Temporal Urban Development Challenge</a>. It took me longer than I want to admit to realize that the challenge was way beyond my capabilities before I decided to move on to another challenge. Since the SpaceNet challenge was a segmentation problem I decided to start fresh with the <a href="https://www.kaggle.com/c/statoil-iceberg-classifier-challenge">Statoil iceberg classifier challenge</a>. Since this was a kaggle competition from several years ago I had numerous notebooks to</p>
+
+<p><strong>Iceberg-challenge</strong></p>
+
+<p>Drifting icebergs present threats to navigation, large companies like Statoil use satellite data to monitor thrats such as icebergs. This particular data consist of feedback from a C-band radar with two channels. The radar operates at decibel frequency which can see through all types of weather. From the beckground section: “An object will appear as a bright spot because it reflects more radar energy than its surroundings, but strong echoes can come from anything solid - land, islands, sea ice, as well as icebergs and ships. The energy reflected back to the radar is referred to as backscatter.”. The objective is to use the satellite data to identify if the energy reflected back to the rader is a ship or an iceberg.</p>
+
+<p>The dataset looks like this, where inc_angle is the angle of the satellite. I ended up not using the incidence angle data since almost 10% of it was missing and I just wanted to produce a working model. 
+<img src="attachment:a65bb049-9f7f-44ed-8431-f2bd327c0610.png" alt="image.png" /></p>
+
+<p>Before I could load the data into fastai I had to deflatten the two bands and construct a third band in order to represent the satellite data as a color composite image.  <img src="attachment:1ac17507-5682-4c47-b993-f2ddf164ccbe.png" alt="image.png" /></p>
+
+<p>this is a plot of the images created by the function
+<img src="attachment:651529ac-50da-4da7-82ea-c395d397308c.png" alt="image.png" /></p>
+
+<p>All that is left now is to structure the data properly so that it is easy to put into an ImageDataLoader<br />
+<img src="attachment:94c07b34-d451-4128-bbe8-65535023ff94.png" alt="image.png" /></p>
+
+<p>Once the data is put into the DataBlock API it is trivial to create the convolutional nerual network using fastai’s cnn_learner to analyze the images. In the original competition submissions were evaluated on log loss, which is equivalent to fastai’s CrossEntropyLoss. I opted for using Resnet50 and upscaling the 75x75 images to 224x224 resolution since training only took ~10 seconds per epoch. 
+<img src="attachment:175810d4-84bd-4d45-909a-ea096dad483b.png" alt="image.png" /></p>
+
+<p>The performance of the model was decent considering the quick and dirty approach. <img src="attachment:f3f44872-f87c-4470-8919-17e38a269656.png" alt="image.png" /></p>
+
+<p><strong>ForestNet</strong></p>
+
+<p>My next step in the project was to explore the ForestNet dataset along with the <a href="https://arxiv.org/pdf/2011.05479.pdf">paper</a>.  The goal was to create a working segmentation model. My exploration of the <a href="https://stanfordmlgroup.github.io/projects/forestnet/">ForestNet dataset</a> has its own blog post <a href="https://oscarsommervold.github.io/DAT255-project/2021/04/24/forestnet-segmentation.html">here</a></p>
