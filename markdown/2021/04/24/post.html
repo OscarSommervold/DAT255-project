@@ -8,15 +8,15 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Exploring deep learning and satellite data with the fastai library" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A minimal example of using markdown with fastpages." />
-<meta property="og:description" content="A minimal example of using markdown with fastpages." />
+<meta name="description" content="DAT 255 project blog post" />
+<meta property="og:description" content="DAT 255 project blog post" />
 <link rel="canonical" href="https://oscarsommervold.github.io/DAT255-project/markdown/2021/04/24/post.html" />
 <meta property="og:url" content="https://oscarsommervold.github.io/DAT255-project/markdown/2021/04/24/post.html" />
 <meta property="og:site_name" content="fastpages" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-04-24T00:00:00-05:00" />
 <script type="application/ld+json">
-{"url":"https://oscarsommervold.github.io/DAT255-project/markdown/2021/04/24/post.html","@type":"BlogPosting","headline":"Exploring deep learning and satellite data with the fastai library","dateModified":"2021-04-24T00:00:00-05:00","datePublished":"2021-04-24T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://oscarsommervold.github.io/DAT255-project/markdown/2021/04/24/post.html"},"description":"A minimal example of using markdown with fastpages.","@context":"https://schema.org"}</script>
+{"url":"https://oscarsommervold.github.io/DAT255-project/markdown/2021/04/24/post.html","@type":"BlogPosting","headline":"Exploring deep learning and satellite data with the fastai library","dateModified":"2021-04-24T00:00:00-05:00","datePublished":"2021-04-24T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://oscarsommervold.github.io/DAT255-project/markdown/2021/04/24/post.html"},"description":"DAT 255 project blog post","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/DAT255-project/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://oscarsommervold.github.io/DAT255-project/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/DAT255-project/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -71,7 +71,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Exploring deep learning and satellite data with the fastai library</h1><p class="page-description">A minimal example of using markdown with fastpages.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-04-24T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Exploring deep learning and satellite data with the fastai library</h1><p class="page-description">DAT 255 project blog post</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-04-24T00:00:00-05:00" itemprop="datePublished">
         Apr 24, 2021
       </time>
        • <span class="read-time" title="Estimated read time">
@@ -94,18 +94,14 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
-<li class="toc-entry toc-h1"><a href="#exploring-deep-learning-and-satellite-data-with-the-fastai-library">Exploring deep learning and satellite data with the fastai library</a></li>
-</ul><h1 id="exploring-deep-learning-and-satellite-data-with-the-fastai-library">
-<a class="anchor" href="#exploring-deep-learning-and-satellite-data-with-the-fastai-library" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exploring deep learning and satellite data with the fastai library</h1>
-
-<p><strong>Background</strong></p>
+</ul><p><strong>Background</strong></p>
 
 <p>Due to government changes and cost reductions, the number of satellite launched into orbit has drastically increased in recent years. <br>
-<img src="attachment:b76a5499-e3ee-4bab-99d6-01b35a5dc2cf.png" width="600" height="600"><br>
+<img src="https://user-images.githubusercontent.com/59794395/115969796-2956a900-a53f-11eb-9245-a895f6bebb62.png" width="600" height="600"><br>
 image from https://www.researchgate.net/figure/The-cumulative-number-of-near-polar-orbiting-high-resolution-Earth-observing-civilian_fig2_340004098)</p>
 
 <p>Many of these satellites capture images of the earth’s surface through various ranges of the electromagnetic spectrum. This combined with the recent advancement in deep learning technology such as the <a href="https://arxiv.org/abs/1505.04597">U-Net</a> has lead to rapid growth in the field of geospatial machine learning. Although this is a relatively new field, there are already several large companies such as <a href="https://spaceknow.com/">spaceknow</a> with several established solutions when it comes to extracting insight from data gathered by these satellites 
-<img src="attachment:433743f7-8bbd-4df3-881b-7acd70e7f36c.png" width="600" height="600"><br>
+<img src="https://user-images.githubusercontent.com/59794395/115969813-3bd0e280-a53f-11eb-9cb8-011ff1560b6d.png" width="600" height="600"><br>
  (image from https://courses.lumenlearning.com/astronomy/chapter/the-electromagnetic-spectrum/)</p>
 
 <p><strong>Project</strong></p>
@@ -117,20 +113,20 @@ image from https://www.researchgate.net/figure/The-cumulative-number-of-near-pol
 <p>Drifting icebergs present threats to navigation, large companies like Statoil use satellite data to monitor thrats such as icebergs. This particular data consist of feedback from a C-band radar with two channels. The radar operates at decibel frequency which can see through all types of weather. From the beckground section: “An object will appear as a bright spot because it reflects more radar energy than its surroundings, but strong echoes can come from anything solid - land, islands, sea ice, as well as icebergs and ships. The energy reflected back to the radar is referred to as backscatter.”. The objective is to use the satellite data to identify if the energy reflected back to the rader is a ship or an iceberg.</p>
 
 <p>The dataset looks like this, where inc_angle is the angle of the satellite. I ended up not using the incidence angle data since almost 10% of it was missing and I just wanted to produce a working model. 
-<img src="attachment:a65bb049-9f7f-44ed-8431-f2bd327c0610.png" alt="image.png"></p>
+<img src="https://user-images.githubusercontent.com/59794395/115969833-52773980-a53f-11eb-8ecd-1fcbe3fea49f.png" alt="image"></p>
 
-<p>Before I could load the data into fastai I had to deflatten the two bands and construct a third band in order to represent the satellite data as a color composite image.  <img src="attachment:1ac17507-5682-4c47-b993-f2ddf164ccbe.png" alt="image.png"></p>
+<p>Before I could load the data into fastai I had to deflatten the two bands and construct a third band in order to represent the satellite data as a color composite image.  !<img src="https://user-images.githubusercontent.com/59794395/115969840-602cbf00-a53f-11eb-93eb-0d71eb4f781c.png" alt="image"></p>
 
-<p>this is a plot of the images created by the function
-<img src="attachment:651529ac-50da-4da7-82ea-c395d397308c.png" alt="image.png"></p>
+<p>Plot of the images created by the function
+<img src="https://user-images.githubusercontent.com/59794395/115969850-6cb11780-a53f-11eb-88d0-797f035d1b76.png" alt="image"></p>
 
 <p>All that is left now is to structure the data properly so that it is easy to put into an ImageDataLoader<br>
-<img src="attachment:94c07b34-d451-4128-bbe8-65535023ff94.png" alt="image.png"></p>
+<img src="https://user-images.githubusercontent.com/59794395/115969862-79357000-a53f-11eb-8ef1-a8aa6b6d1e0f.png" alt="image"></p>
 
 <p>Once the data is put into the DataBlock API it is trivial to create the convolutional nerual network using fastai’s cnn_learner to analyze the images. In the original competition submissions were evaluated on log loss, which is equivalent to fastai’s CrossEntropyLoss. I opted for using Resnet50 and upscaling the 75x75 images to 224x224 resolution since training only took ~10 seconds per epoch. 
-(<img src="https://user-images.githubusercontent.com/59794395/115969634-24452a00-a53e-11eb-812a-7e82cd86c222.png" alt="image">)</p>
+<img src="https://user-images.githubusercontent.com/59794395/115969893-99652f00-a53f-11eb-9a83-ae4787870daf.png" alt="image"></p>
 
-<p>The performance of the model was decent considering the quick and dirty approach. <img src="attachment:f3f44872-f87c-4470-8919-17e38a269656.png" alt="image.png"></p>
+<p>The performance of the model was decent considering the quick and dirty approach. <img src="https://user-images.githubusercontent.com/59794395/115969916-a84be180-a53f-11eb-9d1b-d37afe118ac8.png" alt="image"></p>
 
 <p><strong>ForestNet</strong></p>
 
